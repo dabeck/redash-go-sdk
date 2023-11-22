@@ -1,4 +1,4 @@
-module github.com/recolabs/redash-go-sdk
+module github.com/dabeck/redash-go-sdk
 
 go 1.16
 

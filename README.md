@@ -1,10 +1,10 @@
 # Redash Go SDK
 
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/recolabs/redash-go-sdk)](https://github.com/RecoLabs/redash-go-sdk/releases)
-[![Build](https://github.com/RecoLabs/redash-go-sdk/actions/workflows/lintest.yml/badge.svg)](https://github.com/RecoLabs/redash-go-sdk/actions/workflows/lintest.yml)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/recolabs/redash-go-sdk)](https://github.com/dabeck/redash-go-sdk/releases)
+[![Build](https://github.com/dabeck/redash-go-sdk/actions/workflows/lintest.yml/badge.svg)](https://github.com/dabeck/redash-go-sdk/actions/workflows/lintest.yml)
 [![Codecov](https://img.shields.io/codecov/c/github/recolabs/redash-go-sdk)](https://app.codecov.io/gh/RecoLabs/redash-go-sdk)
 [![Go Reference](https://pkg.go.dev/badge/github.com/recolabs/redash-go-sdk.svg)](https://pkg.go.dev/github.com/recolabs/redash-go-sdk)
-[![Sourcegraph](https://sourcegraph.com/github.com/RecoLabs/redash-go-sdk/-/badge.svg)](https://sourcegraph.com/github.com/RecoLabs/redash-go-sdk?badge)
+[![Sourcegraph](https://sourcegraph.com/github.com/dabeck/redash-go-sdk/-/badge.svg)](https://sourcegraph.com/github.com/RecoLabs/redash-go-sdk?badge)
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/recolabs/redash-go-sdk?style=social)
 ![Twitter Follow](https://img.shields.io/twitter/follow/recolabs_ai?style=social)
@@ -82,7 +82,7 @@ import (
     "fmt"
 
     redashclient "github.com/recolabs/redash-go-sdk"
-    "github.com/recolabs/redash-go-sdk/gen/client"
+    "github.com/dabeck/redash-go-sdk/gen/client"
 )
 
 func main() {
@@ -162,7 +162,7 @@ queries, err := redashClient.DataSources.Get(dsID)
 #### Add DataSource
 
 ```golang
-import redashclient "github.com/recolabs/redash-go-sdk/datasources"
+import redashclient "github.com/dabeck/redash-go-sdk/datasources"
 
 ...
 
@@ -191,7 +191,7 @@ err := redashClient.DataSources.Delete(queryID)
 #### Update DataSource
 
 ```golang
-import redashclient "github.com/recolabs/redash-go-sdk/datasources"
+import redashclient "github.com/dabeck/redash-go-sdk/datasources"
 
 ...
 
@@ -225,7 +225,7 @@ dataSources, err := redashClient.Visualizations.GetURL(visualizationID, queryID,
 #### Add Visualization
 
 ```golang
-import redashclient "github.com/recolabs/redash-go-sdk/visualizations"
+import redashclient "github.com/dabeck/redash-go-sdk/visualizations"
 
 ...
 

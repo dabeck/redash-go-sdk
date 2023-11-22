@@ -6,11 +6,11 @@ import (
 	"reflect"
 	"testing"
 
+	"github.com/dabeck/redash-go-sdk/gen/client"
+	gen_data_sources "github.com/dabeck/redash-go-sdk/gen/client/data_sources"
 	"github.com/dabeck/redash-go-sdk/gen/models"
-	"github.com/recolabs/redash-go-sdk/gen/client"
-	gen_data_sources "github.com/recolabs/redash-go-sdk/gen/client/data_sources"
-	mock_data_sources "github.com/recolabs/redash-go-sdk/mocks/data_sources"
-	"github.com/recolabs/redash-go-sdk/options"
+	mock_data_sources "github.com/dabeck/redash-go-sdk/mocks/data_sources"
+	"github.com/dabeck/redash-go-sdk/options"
 )
 
 const (

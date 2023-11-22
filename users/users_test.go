@@ -5,12 +5,12 @@ import (
 	"reflect"
 	"testing"
 
+	gen_users "github.com/dabeck/redash-go-sdk/gen/client/users"
+	mock_users "github.com/dabeck/redash-go-sdk/mocks/users"
 	"github.com/go-openapi/strfmt"
-	gen_users "github.com/recolabs/redash-go-sdk/gen/client/users"
-	mock_users "github.com/recolabs/redash-go-sdk/mocks/users"
 
+	"github.com/dabeck/redash-go-sdk/gen/client"
 	"github.com/dabeck/redash-go-sdk/gen/models"
-	"github.com/recolabs/redash-go-sdk/gen/client"
 )
 
 const (

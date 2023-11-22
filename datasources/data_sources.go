@@ -2,10 +2,10 @@
 package datasources
 
 import (
+	"github.com/dabeck/redash-go-sdk/gen/client"
+	ds "github.com/dabeck/redash-go-sdk/gen/client/data_sources"
 	"github.com/dabeck/redash-go-sdk/gen/models"
-	"github.com/recolabs/redash-go-sdk/gen/client"
-	ds "github.com/recolabs/redash-go-sdk/gen/client/data_sources"
-	"github.com/recolabs/redash-go-sdk/options"
+	"github.com/dabeck/redash-go-sdk/options"
 )
 
 // RequestWrapper is the struct holding the configuration for the DataSource manipulation code

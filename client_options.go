@@ -1,12 +1,12 @@
 package redashclient
 
 import (
-	gen_admin "github.com/dabeck/redash-go-sdk/gen/client/administration"
-	gen_ds "github.com/dabeck/redash-go-sdk/gen/client/data_sources"
-	gen_queries "github.com/dabeck/redash-go-sdk/gen/client/queries"
-	gen_users "github.com/dabeck/redash-go-sdk/gen/client/users"
-	gen_viz "github.com/dabeck/redash-go-sdk/gen/client/visualizations"
 	"github.com/go-openapi/runtime"
+	gen_admin "github.com/recolabs/redash-go-sdk/gen/client/administration"
+	gen_ds "github.com/recolabs/redash-go-sdk/gen/client/data_sources"
+	gen_queries "github.com/recolabs/redash-go-sdk/gen/client/queries"
+	gen_users "github.com/recolabs/redash-go-sdk/gen/client/users"
+	gen_viz "github.com/recolabs/redash-go-sdk/gen/client/visualizations"
 )
 
 // ClientOption is the option for Client methods.

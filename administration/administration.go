@@ -1,8 +1,8 @@
 package administration
 
 import (
-	"github.com/dabeck/redash-go-sdk/gen/client"
-	admin "github.com/dabeck/redash-go-sdk/gen/client/administration"
+	"github.com/recolabs/redash-go-sdk/gen/client"
+	admin "github.com/recolabs/redash-go-sdk/gen/client/administration"
 )
 
 type RequestWrapper struct {

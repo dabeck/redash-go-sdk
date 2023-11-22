@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/dabeck/redash-go-sdk/gen/client"
-	admin "github.com/dabeck/redash-go-sdk/gen/client/administration"
+	"github.com/recolabs/redash-go-sdk/gen/client"
+	admin "github.com/recolabs/redash-go-sdk/gen/client/administration"
 	mock_administration "github.com/recolabs/redash-go-sdk/mocks/administration"
 )
 

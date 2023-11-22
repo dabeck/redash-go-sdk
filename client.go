@@ -3,7 +3,7 @@
 //
 // import (
 //    redashclient "github.com/recolabs/redash-go-sdk/redashClient"
-//    "github.com/dabeck/redash-go-sdk/gen/client"
+//    "github.com/recolabs/redash-go-sdk/gen/client"
 // )
 // redashClient := redashclient.NewClient(
 // 	 "{API_KEY}",
@@ -28,10 +28,10 @@
 package redashclient
 
 import (
-	"github.com/dabeck/redash-go-sdk/gen/client"
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/recolabs/redash-go-sdk/administration"
 	"github.com/recolabs/redash-go-sdk/datasources"
+	"github.com/recolabs/redash-go-sdk/gen/client"
 	"github.com/recolabs/redash-go-sdk/queries"
 	"github.com/recolabs/redash-go-sdk/users"
 	"github.com/recolabs/redash-go-sdk/visualizations"

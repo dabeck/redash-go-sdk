@@ -1,10 +1,10 @@
 package users
 
 import (
-	"github.com/dabeck/redash-go-sdk/gen/client"
-	"github.com/dabeck/redash-go-sdk/gen/client/users"
 	"github.com/dabeck/redash-go-sdk/gen/models"
 	"github.com/go-openapi/strfmt"
+	"github.com/recolabs/redash-go-sdk/gen/client"
+	"github.com/recolabs/redash-go-sdk/gen/client/users"
 )
 
 type RequestWrapper struct {

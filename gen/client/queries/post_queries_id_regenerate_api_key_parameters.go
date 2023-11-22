@@ -53,10 +53,12 @@ func NewPostQueriesIDRegenerateAPIKeyParamsWithHTTPClient(client *http.Client) *
 	}
 }
 
-/* PostQueriesIDRegenerateAPIKeyParams contains all the parameters to send to the API endpoint
-   for the post queries ID regenerate API key operation.
+/*
+PostQueriesIDRegenerateAPIKeyParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the post queries ID regenerate API key operation.
+
+	Typically these are written to a http.Request.
 */
 type PostQueriesIDRegenerateAPIKeyParams struct {
 

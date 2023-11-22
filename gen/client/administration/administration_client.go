@@ -36,7 +36,7 @@ type ClientService interface {
 }
 
 /*
-  GetPing get ping API
+GetPing get ping API
 */
 func (a *Client) GetPing(params *GetPingParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetPingOK, error) {
 	// TODO: Validate the params before sending

@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 
-	"github.com/recolabs/redash-go-sdk/gen/models"
+	"github.com/dabeck/redash-go-sdk/gen/models"
 )
 
 // PostVisualizationsReader is a Reader for the PostVisualizations structure.
@@ -48,7 +48,8 @@ func NewPostVisualizationsOK() *PostVisualizationsOK {
 	return &PostVisualizationsOK{}
 }
 
-/* PostVisualizationsOK describes a response with status code 200, with default header values.
+/*
+PostVisualizationsOK describes a response with status code 200, with default header values.
 
 OK
 */
@@ -56,9 +57,44 @@ type PostVisualizationsOK struct {
 	Payload *models.Visualization
 }
 
+// IsSuccess returns true when this post visualizations o k response has a 2xx status code
+func (o *PostVisualizationsOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this post visualizations o k response has a 3xx status code
+func (o *PostVisualizationsOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post visualizations o k response has a 4xx status code
+func (o *PostVisualizationsOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this post visualizations o k response has a 5xx status code
+func (o *PostVisualizationsOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this post visualizations o k response a status code equal to that given
+func (o *PostVisualizationsOK) IsCode(code int) bool {
+	return code == 200
+}
+
+// Code gets the status code for the post visualizations o k response
+func (o *PostVisualizationsOK) Code() int {
+	return 200
+}
+
 func (o *PostVisualizationsOK) Error() string {
 	return fmt.Sprintf("[POST /visualizations][%d] postVisualizationsOK  %+v", 200, o.Payload)
 }
+
+func (o *PostVisualizationsOK) String() string {
+	return fmt.Sprintf("[POST /visualizations][%d] postVisualizationsOK  %+v", 200, o.Payload)
+}
+
 func (o *PostVisualizationsOK) GetPayload() *models.Visualization {
 	return o.Payload
 }
@@ -82,7 +118,8 @@ func NewPostVisualizationsDefault(code int) *PostVisualizationsDefault {
 	}
 }
 
-/* PostVisualizationsDefault describes a response with status code -1, with default header values.
+/*
+PostVisualizationsDefault describes a response with status code -1, with default header values.
 
 error
 */
@@ -90,6 +127,31 @@ type PostVisualizationsDefault struct {
 	_statusCode int
 
 	Payload *models.Error
+}
+
+// IsSuccess returns true when this post visualizations default response has a 2xx status code
+func (o *PostVisualizationsDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this post visualizations default response has a 3xx status code
+func (o *PostVisualizationsDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this post visualizations default response has a 4xx status code
+func (o *PostVisualizationsDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this post visualizations default response has a 5xx status code
+func (o *PostVisualizationsDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this post visualizations default response a status code equal to that given
+func (o *PostVisualizationsDefault) IsCode(code int) bool {
+	return o._statusCode == code
 }
 
 // Code gets the status code for the post visualizations default response
@@ -100,6 +162,11 @@ func (o *PostVisualizationsDefault) Code() int {
 func (o *PostVisualizationsDefault) Error() string {
 	return fmt.Sprintf("[POST /visualizations][%d] PostVisualizations default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *PostVisualizationsDefault) String() string {
+	return fmt.Sprintf("[POST /visualizations][%d] PostVisualizations default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *PostVisualizationsDefault) GetPayload() *models.Error {
 	return o.Payload
 }
@@ -116,7 +183,8 @@ func (o *PostVisualizationsDefault) readResponse(response runtime.ClientResponse
 	return nil
 }
 
-/*PostVisualizationsBody post visualizations body
+/*
+PostVisualizationsBody post visualizations body
 swagger:model PostVisualizationsBody
 */
 type PostVisualizationsBody struct {

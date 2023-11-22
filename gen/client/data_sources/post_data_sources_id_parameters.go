@@ -53,10 +53,12 @@ func NewPostDataSourcesIDParamsWithHTTPClient(client *http.Client) *PostDataSour
 	}
 }
 
-/* PostDataSourcesIDParams contains all the parameters to send to the API endpoint
-   for the post data sources ID operation.
+/*
+PostDataSourcesIDParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the post data sources ID operation.
+
+	Typically these are written to a http.Request.
 */
 type PostDataSourcesIDParams struct {
 

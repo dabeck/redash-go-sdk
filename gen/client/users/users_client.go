@@ -34,7 +34,7 @@ type ClientService interface {
 }
 
 /*
-  GetUsersID get users ID API
+GetUsersID get users ID API
 */
 func (a *Client) GetUsersID(params *GetUsersIDParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetUsersIDOK, error) {
 	// TODO: Validate the params before sending

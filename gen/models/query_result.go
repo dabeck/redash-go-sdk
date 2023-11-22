@@ -74,6 +74,11 @@ func (m *QueryResult) ContextValidate(ctx context.Context, formats strfmt.Regist
 func (m *QueryResult) contextValidateQueryResult(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.QueryResult != nil {
+
+		if swag.IsZero(m.QueryResult) { // not required
+			return nil
+		}
+
 		if err := m.QueryResult.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("query_result")
@@ -196,6 +201,11 @@ func (m *QueryResultQueryResult) ContextValidate(ctx context.Context, formats st
 func (m *QueryResultQueryResult) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Data != nil {
+
+		if swag.IsZero(m.Data) { // not required
+			return nil
+		}
+
 		if err := m.Data.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("query_result" + "." + "data")
@@ -328,6 +338,11 @@ func (m *QueryResultQueryResultData) contextValidateColumns(ctx context.Context,
 	for i := 0; i < len(m.Columns); i++ {
 
 		if m.Columns[i] != nil {
+
+			if swag.IsZero(m.Columns[i]) { // not required
+				return nil
+			}
+
 			if err := m.Columns[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("query_result" + "." + "data" + "." + "columns" + "." + strconv.Itoa(i))
@@ -346,6 +361,11 @@ func (m *QueryResultQueryResultData) contextValidateColumns(ctx context.Context,
 func (m *QueryResultQueryResultData) contextValidateMetadata(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Metadata != nil {
+
+		if swag.IsZero(m.Metadata) { // not required
+			return nil
+		}
+
 		if err := m.Metadata.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("query_result" + "." + "data" + "." + "metadata")

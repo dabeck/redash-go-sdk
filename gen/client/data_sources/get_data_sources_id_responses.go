@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/recolabs/redash-go-sdk/gen/models"
+	"github.com/dabeck/redash-go-sdk/gen/models"
 )
 
 // GetDataSourcesIDReader is a Reader for the GetDataSourcesID structure.
@@ -46,7 +46,8 @@ func NewGetDataSourcesIDOK() *GetDataSourcesIDOK {
 	return &GetDataSourcesIDOK{}
 }
 
-/* GetDataSourcesIDOK describes a response with status code 200, with default header values.
+/*
+GetDataSourcesIDOK describes a response with status code 200, with default header values.
 
 Get data source by ID
 */
@@ -54,9 +55,44 @@ type GetDataSourcesIDOK struct {
 	Payload *models.DataSource
 }
 
+// IsSuccess returns true when this get data sources Id o k response has a 2xx status code
+func (o *GetDataSourcesIDOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get data sources Id o k response has a 3xx status code
+func (o *GetDataSourcesIDOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get data sources Id o k response has a 4xx status code
+func (o *GetDataSourcesIDOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get data sources Id o k response has a 5xx status code
+func (o *GetDataSourcesIDOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get data sources Id o k response a status code equal to that given
+func (o *GetDataSourcesIDOK) IsCode(code int) bool {
+	return code == 200
+}
+
+// Code gets the status code for the get data sources Id o k response
+func (o *GetDataSourcesIDOK) Code() int {
+	return 200
+}
+
 func (o *GetDataSourcesIDOK) Error() string {
 	return fmt.Sprintf("[GET /data_sources/{id}][%d] getDataSourcesIdOK  %+v", 200, o.Payload)
 }
+
+func (o *GetDataSourcesIDOK) String() string {
+	return fmt.Sprintf("[GET /data_sources/{id}][%d] getDataSourcesIdOK  %+v", 200, o.Payload)
+}
+
 func (o *GetDataSourcesIDOK) GetPayload() *models.DataSource {
 	return o.Payload
 }
@@ -80,7 +116,8 @@ func NewGetDataSourcesIDDefault(code int) *GetDataSourcesIDDefault {
 	}
 }
 
-/* GetDataSourcesIDDefault describes a response with status code -1, with default header values.
+/*
+GetDataSourcesIDDefault describes a response with status code -1, with default header values.
 
 error
 */
@@ -88,6 +125,31 @@ type GetDataSourcesIDDefault struct {
 	_statusCode int
 
 	Payload *models.Error
+}
+
+// IsSuccess returns true when this get data sources ID default response has a 2xx status code
+func (o *GetDataSourcesIDDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this get data sources ID default response has a 3xx status code
+func (o *GetDataSourcesIDDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this get data sources ID default response has a 4xx status code
+func (o *GetDataSourcesIDDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this get data sources ID default response has a 5xx status code
+func (o *GetDataSourcesIDDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this get data sources ID default response a status code equal to that given
+func (o *GetDataSourcesIDDefault) IsCode(code int) bool {
+	return o._statusCode == code
 }
 
 // Code gets the status code for the get data sources ID default response
@@ -98,6 +160,11 @@ func (o *GetDataSourcesIDDefault) Code() int {
 func (o *GetDataSourcesIDDefault) Error() string {
 	return fmt.Sprintf("[GET /data_sources/{id}][%d] GetDataSourcesID default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *GetDataSourcesIDDefault) String() string {
+	return fmt.Sprintf("[GET /data_sources/{id}][%d] GetDataSourcesID default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *GetDataSourcesIDDefault) GetPayload() *models.Error {
 	return o.Payload
 }

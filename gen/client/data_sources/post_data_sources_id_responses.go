@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 
-	"github.com/recolabs/redash-go-sdk/gen/models"
+	"github.com/dabeck/redash-go-sdk/gen/models"
 )
 
 // PostDataSourcesIDReader is a Reader for the PostDataSourcesID structure.
@@ -48,7 +48,8 @@ func NewPostDataSourcesIDOK() *PostDataSourcesIDOK {
 	return &PostDataSourcesIDOK{}
 }
 
-/* PostDataSourcesIDOK describes a response with status code 200, with default header values.
+/*
+PostDataSourcesIDOK describes a response with status code 200, with default header values.
 
 OK
 */
@@ -56,9 +57,44 @@ type PostDataSourcesIDOK struct {
 	Payload *models.DataSource
 }
 
+// IsSuccess returns true when this post data sources Id o k response has a 2xx status code
+func (o *PostDataSourcesIDOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this post data sources Id o k response has a 3xx status code
+func (o *PostDataSourcesIDOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post data sources Id o k response has a 4xx status code
+func (o *PostDataSourcesIDOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this post data sources Id o k response has a 5xx status code
+func (o *PostDataSourcesIDOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this post data sources Id o k response a status code equal to that given
+func (o *PostDataSourcesIDOK) IsCode(code int) bool {
+	return code == 200
+}
+
+// Code gets the status code for the post data sources Id o k response
+func (o *PostDataSourcesIDOK) Code() int {
+	return 200
+}
+
 func (o *PostDataSourcesIDOK) Error() string {
 	return fmt.Sprintf("[POST /data_sources/{id}][%d] postDataSourcesIdOK  %+v", 200, o.Payload)
 }
+
+func (o *PostDataSourcesIDOK) String() string {
+	return fmt.Sprintf("[POST /data_sources/{id}][%d] postDataSourcesIdOK  %+v", 200, o.Payload)
+}
+
 func (o *PostDataSourcesIDOK) GetPayload() *models.DataSource {
 	return o.Payload
 }
@@ -82,7 +118,8 @@ func NewPostDataSourcesIDDefault(code int) *PostDataSourcesIDDefault {
 	}
 }
 
-/* PostDataSourcesIDDefault describes a response with status code -1, with default header values.
+/*
+PostDataSourcesIDDefault describes a response with status code -1, with default header values.
 
 error
 */
@@ -90,6 +127,31 @@ type PostDataSourcesIDDefault struct {
 	_statusCode int
 
 	Payload *models.Error
+}
+
+// IsSuccess returns true when this post data sources ID default response has a 2xx status code
+func (o *PostDataSourcesIDDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this post data sources ID default response has a 3xx status code
+func (o *PostDataSourcesIDDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this post data sources ID default response has a 4xx status code
+func (o *PostDataSourcesIDDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this post data sources ID default response has a 5xx status code
+func (o *PostDataSourcesIDDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this post data sources ID default response a status code equal to that given
+func (o *PostDataSourcesIDDefault) IsCode(code int) bool {
+	return o._statusCode == code
 }
 
 // Code gets the status code for the post data sources ID default response
@@ -100,6 +162,11 @@ func (o *PostDataSourcesIDDefault) Code() int {
 func (o *PostDataSourcesIDDefault) Error() string {
 	return fmt.Sprintf("[POST /data_sources/{id}][%d] PostDataSourcesID default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *PostDataSourcesIDDefault) String() string {
+	return fmt.Sprintf("[POST /data_sources/{id}][%d] PostDataSourcesID default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *PostDataSourcesIDDefault) GetPayload() *models.Error {
 	return o.Payload
 }
@@ -116,7 +183,8 @@ func (o *PostDataSourcesIDDefault) readResponse(response runtime.ClientResponse,
 	return nil
 }
 
-/*PostDataSourcesIDBody post data sources ID body
+/*
+PostDataSourcesIDBody post data sources ID body
 swagger:model PostDataSourcesIDBody
 */
 type PostDataSourcesIDBody struct {

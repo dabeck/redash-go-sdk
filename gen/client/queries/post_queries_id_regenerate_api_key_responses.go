@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/recolabs/redash-go-sdk/gen/models"
+	"github.com/dabeck/redash-go-sdk/gen/models"
 )
 
 // PostQueriesIDRegenerateAPIKeyReader is a Reader for the PostQueriesIDRegenerateAPIKey structure.
@@ -46,14 +46,49 @@ func NewPostQueriesIDRegenerateAPIKeyOK() *PostQueriesIDRegenerateAPIKeyOK {
 	return &PostQueriesIDRegenerateAPIKeyOK{}
 }
 
-/* PostQueriesIDRegenerateAPIKeyOK describes a response with status code 200, with default header values.
+/*
+PostQueriesIDRegenerateAPIKeyOK describes a response with status code 200, with default header values.
 
 The query which token was refreshed
 */
 type PostQueriesIDRegenerateAPIKeyOK struct {
 }
 
+// IsSuccess returns true when this post queries Id regenerate Api key o k response has a 2xx status code
+func (o *PostQueriesIDRegenerateAPIKeyOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this post queries Id regenerate Api key o k response has a 3xx status code
+func (o *PostQueriesIDRegenerateAPIKeyOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post queries Id regenerate Api key o k response has a 4xx status code
+func (o *PostQueriesIDRegenerateAPIKeyOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this post queries Id regenerate Api key o k response has a 5xx status code
+func (o *PostQueriesIDRegenerateAPIKeyOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this post queries Id regenerate Api key o k response a status code equal to that given
+func (o *PostQueriesIDRegenerateAPIKeyOK) IsCode(code int) bool {
+	return code == 200
+}
+
+// Code gets the status code for the post queries Id regenerate Api key o k response
+func (o *PostQueriesIDRegenerateAPIKeyOK) Code() int {
+	return 200
+}
+
 func (o *PostQueriesIDRegenerateAPIKeyOK) Error() string {
+	return fmt.Sprintf("[POST /queries/{id}/regenerate_api_key][%d] postQueriesIdRegenerateApiKeyOK ", 200)
+}
+
+func (o *PostQueriesIDRegenerateAPIKeyOK) String() string {
 	return fmt.Sprintf("[POST /queries/{id}/regenerate_api_key][%d] postQueriesIdRegenerateApiKeyOK ", 200)
 }
 
@@ -69,7 +104,8 @@ func NewPostQueriesIDRegenerateAPIKeyDefault(code int) *PostQueriesIDRegenerateA
 	}
 }
 
-/* PostQueriesIDRegenerateAPIKeyDefault describes a response with status code -1, with default header values.
+/*
+PostQueriesIDRegenerateAPIKeyDefault describes a response with status code -1, with default header values.
 
 error
 */
@@ -77,6 +113,31 @@ type PostQueriesIDRegenerateAPIKeyDefault struct {
 	_statusCode int
 
 	Payload *models.Error
+}
+
+// IsSuccess returns true when this post queries ID regenerate API key default response has a 2xx status code
+func (o *PostQueriesIDRegenerateAPIKeyDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this post queries ID regenerate API key default response has a 3xx status code
+func (o *PostQueriesIDRegenerateAPIKeyDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this post queries ID regenerate API key default response has a 4xx status code
+func (o *PostQueriesIDRegenerateAPIKeyDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this post queries ID regenerate API key default response has a 5xx status code
+func (o *PostQueriesIDRegenerateAPIKeyDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this post queries ID regenerate API key default response a status code equal to that given
+func (o *PostQueriesIDRegenerateAPIKeyDefault) IsCode(code int) bool {
+	return o._statusCode == code
 }
 
 // Code gets the status code for the post queries ID regenerate API key default response
@@ -87,6 +148,11 @@ func (o *PostQueriesIDRegenerateAPIKeyDefault) Code() int {
 func (o *PostQueriesIDRegenerateAPIKeyDefault) Error() string {
 	return fmt.Sprintf("[POST /queries/{id}/regenerate_api_key][%d] PostQueriesIDRegenerateAPIKey default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *PostQueriesIDRegenerateAPIKeyDefault) String() string {
+	return fmt.Sprintf("[POST /queries/{id}/regenerate_api_key][%d] PostQueriesIDRegenerateAPIKey default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *PostQueriesIDRegenerateAPIKeyDefault) GetPayload() *models.Error {
 	return o.Payload
 }

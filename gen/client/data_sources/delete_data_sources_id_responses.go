@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/recolabs/redash-go-sdk/gen/models"
+	"github.com/dabeck/redash-go-sdk/gen/models"
 )
 
 // DeleteDataSourcesIDReader is a Reader for the DeleteDataSourcesID structure.
@@ -46,14 +46,49 @@ func NewDeleteDataSourcesIDNoContent() *DeleteDataSourcesIDNoContent {
 	return &DeleteDataSourcesIDNoContent{}
 }
 
-/* DeleteDataSourcesIDNoContent describes a response with status code 204, with default header values.
+/*
+DeleteDataSourcesIDNoContent describes a response with status code 204, with default header values.
 
 Data Source was deleted
 */
 type DeleteDataSourcesIDNoContent struct {
 }
 
+// IsSuccess returns true when this delete data sources Id no content response has a 2xx status code
+func (o *DeleteDataSourcesIDNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this delete data sources Id no content response has a 3xx status code
+func (o *DeleteDataSourcesIDNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete data sources Id no content response has a 4xx status code
+func (o *DeleteDataSourcesIDNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this delete data sources Id no content response has a 5xx status code
+func (o *DeleteDataSourcesIDNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete data sources Id no content response a status code equal to that given
+func (o *DeleteDataSourcesIDNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
+// Code gets the status code for the delete data sources Id no content response
+func (o *DeleteDataSourcesIDNoContent) Code() int {
+	return 204
+}
+
 func (o *DeleteDataSourcesIDNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /data_sources/{id}][%d] deleteDataSourcesIdNoContent ", 204)
+}
+
+func (o *DeleteDataSourcesIDNoContent) String() string {
 	return fmt.Sprintf("[DELETE /data_sources/{id}][%d] deleteDataSourcesIdNoContent ", 204)
 }
 
@@ -69,7 +104,8 @@ func NewDeleteDataSourcesIDDefault(code int) *DeleteDataSourcesIDDefault {
 	}
 }
 
-/* DeleteDataSourcesIDDefault describes a response with status code -1, with default header values.
+/*
+DeleteDataSourcesIDDefault describes a response with status code -1, with default header values.
 
 error
 */
@@ -77,6 +113,31 @@ type DeleteDataSourcesIDDefault struct {
 	_statusCode int
 
 	Payload *models.Error
+}
+
+// IsSuccess returns true when this delete data sources ID default response has a 2xx status code
+func (o *DeleteDataSourcesIDDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this delete data sources ID default response has a 3xx status code
+func (o *DeleteDataSourcesIDDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this delete data sources ID default response has a 4xx status code
+func (o *DeleteDataSourcesIDDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this delete data sources ID default response has a 5xx status code
+func (o *DeleteDataSourcesIDDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this delete data sources ID default response a status code equal to that given
+func (o *DeleteDataSourcesIDDefault) IsCode(code int) bool {
+	return o._statusCode == code
 }
 
 // Code gets the status code for the delete data sources ID default response
@@ -87,6 +148,11 @@ func (o *DeleteDataSourcesIDDefault) Code() int {
 func (o *DeleteDataSourcesIDDefault) Error() string {
 	return fmt.Sprintf("[DELETE /data_sources/{id}][%d] DeleteDataSourcesID default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DeleteDataSourcesIDDefault) String() string {
+	return fmt.Sprintf("[DELETE /data_sources/{id}][%d] DeleteDataSourcesID default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DeleteDataSourcesIDDefault) GetPayload() *models.Error {
 	return o.Payload
 }

@@ -52,10 +52,12 @@ func NewPostDataSourcesParamsWithHTTPClient(client *http.Client) *PostDataSource
 	}
 }
 
-/* PostDataSourcesParams contains all the parameters to send to the API endpoint
-   for the post data sources operation.
+/*
+PostDataSourcesParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the post data sources operation.
+
+	Typically these are written to a http.Request.
 */
 type PostDataSourcesParams struct {
 

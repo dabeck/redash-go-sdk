@@ -53,10 +53,12 @@ func NewPostQueriesIDResultsParamsWithHTTPClient(client *http.Client) *PostQueri
 	}
 }
 
-/* PostQueriesIDResultsParams contains all the parameters to send to the API endpoint
-   for the post queries ID results operation.
+/*
+PostQueriesIDResultsParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the post queries ID results operation.
+
+	Typically these are written to a http.Request.
 */
 type PostQueriesIDResultsParams struct {
 

@@ -261,6 +261,11 @@ func (m *Query) contextValidateID(ctx context.Context, formats strfmt.Registry) 
 func (m *Query) contextValidateSchedule(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Schedule != nil {
+
+		if swag.IsZero(m.Schedule) { // not required
+			return nil
+		}
+
 		if err := m.Schedule.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("schedule")
@@ -279,6 +284,11 @@ func (m *Query) contextValidateVisualizations(ctx context.Context, formats strfm
 	for i := 0; i < len(m.Visualizations); i++ {
 
 		if m.Visualizations[i] != nil {
+
+			if swag.IsZero(m.Visualizations[i]) { // not required
+				return nil
+			}
+
 			if err := m.Visualizations[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("visualizations" + "." + strconv.Itoa(i))

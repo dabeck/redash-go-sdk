@@ -42,7 +42,7 @@ type ClientService interface {
 }
 
 /*
-  DeleteDataSourcesID delete data sources ID API
+DeleteDataSourcesID delete data sources ID API
 */
 func (a *Client) DeleteDataSourcesID(params *DeleteDataSourcesIDParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteDataSourcesIDNoContent, error) {
 	// TODO: Validate the params before sending
@@ -80,7 +80,7 @@ func (a *Client) DeleteDataSourcesID(params *DeleteDataSourcesIDParams, authInfo
 }
 
 /*
-  GetDataSourcesID get data sources ID API
+GetDataSourcesID get data sources ID API
 */
 func (a *Client) GetDataSourcesID(params *GetDataSourcesIDParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetDataSourcesIDOK, error) {
 	// TODO: Validate the params before sending
@@ -118,7 +118,7 @@ func (a *Client) GetDataSourcesID(params *GetDataSourcesIDParams, authInfo runti
 }
 
 /*
-  PostDataSources post data sources API
+PostDataSources post data sources API
 */
 func (a *Client) PostDataSources(params *PostDataSourcesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostDataSourcesOK, error) {
 	// TODO: Validate the params before sending
@@ -156,7 +156,7 @@ func (a *Client) PostDataSources(params *PostDataSourcesParams, authInfo runtime
 }
 
 /*
-  PostDataSourcesID post data sources ID API
+PostDataSourcesID post data sources ID API
 */
 func (a *Client) PostDataSourcesID(params *PostDataSourcesIDParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostDataSourcesIDOK, error) {
 	// TODO: Validate the params before sending
@@ -194,7 +194,7 @@ func (a *Client) PostDataSourcesID(params *PostDataSourcesIDParams, authInfo run
 }
 
 /*
-  List list API
+List list API
 */
 func (a *Client) List(params *ListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListOK, error) {
 	// TODO: Validate the params before sending

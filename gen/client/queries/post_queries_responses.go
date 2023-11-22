@@ -16,7 +16,7 @@ import (
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 
-	"github.com/recolabs/redash-go-sdk/gen/models"
+	"github.com/dabeck/redash-go-sdk/gen/models"
 )
 
 // PostQueriesReader is a Reader for the PostQueries structure.
@@ -50,7 +50,8 @@ func NewPostQueriesOK() *PostQueriesOK {
 	return &PostQueriesOK{}
 }
 
-/* PostQueriesOK describes a response with status code 200, with default header values.
+/*
+PostQueriesOK describes a response with status code 200, with default header values.
 
 OK
 */
@@ -58,9 +59,44 @@ type PostQueriesOK struct {
 	Payload *models.Query
 }
 
+// IsSuccess returns true when this post queries o k response has a 2xx status code
+func (o *PostQueriesOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this post queries o k response has a 3xx status code
+func (o *PostQueriesOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post queries o k response has a 4xx status code
+func (o *PostQueriesOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this post queries o k response has a 5xx status code
+func (o *PostQueriesOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this post queries o k response a status code equal to that given
+func (o *PostQueriesOK) IsCode(code int) bool {
+	return code == 200
+}
+
+// Code gets the status code for the post queries o k response
+func (o *PostQueriesOK) Code() int {
+	return 200
+}
+
 func (o *PostQueriesOK) Error() string {
 	return fmt.Sprintf("[POST /queries][%d] postQueriesOK  %+v", 200, o.Payload)
 }
+
+func (o *PostQueriesOK) String() string {
+	return fmt.Sprintf("[POST /queries][%d] postQueriesOK  %+v", 200, o.Payload)
+}
+
 func (o *PostQueriesOK) GetPayload() *models.Query {
 	return o.Payload
 }
@@ -84,7 +120,8 @@ func NewPostQueriesDefault(code int) *PostQueriesDefault {
 	}
 }
 
-/* PostQueriesDefault describes a response with status code -1, with default header values.
+/*
+PostQueriesDefault describes a response with status code -1, with default header values.
 
 error
 */
@@ -92,6 +129,31 @@ type PostQueriesDefault struct {
 	_statusCode int
 
 	Payload *models.Error
+}
+
+// IsSuccess returns true when this post queries default response has a 2xx status code
+func (o *PostQueriesDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this post queries default response has a 3xx status code
+func (o *PostQueriesDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this post queries default response has a 4xx status code
+func (o *PostQueriesDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this post queries default response has a 5xx status code
+func (o *PostQueriesDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this post queries default response a status code equal to that given
+func (o *PostQueriesDefault) IsCode(code int) bool {
+	return o._statusCode == code
 }
 
 // Code gets the status code for the post queries default response
@@ -102,6 +164,11 @@ func (o *PostQueriesDefault) Code() int {
 func (o *PostQueriesDefault) Error() string {
 	return fmt.Sprintf("[POST /queries][%d] PostQueries default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *PostQueriesDefault) String() string {
+	return fmt.Sprintf("[POST /queries][%d] PostQueries default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *PostQueriesDefault) GetPayload() *models.Error {
 	return o.Payload
 }
@@ -118,7 +185,8 @@ func (o *PostQueriesDefault) readResponse(response runtime.ClientResponse, consu
 	return nil
 }
 
-/*PostQueriesBody post queries body
+/*
+PostQueriesBody post queries body
 swagger:model PostQueriesBody
 */
 type PostQueriesBody struct {
@@ -212,6 +280,11 @@ func (o *PostQueriesBody) ContextValidate(ctx context.Context, formats strfmt.Re
 func (o *PostQueriesBody) contextValidateSchedule(ctx context.Context, formats strfmt.Registry) error {
 
 	if o.Schedule != nil {
+
+		if swag.IsZero(o.Schedule) { // not required
+			return nil
+		}
+
 		if err := o.Schedule.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("body" + "." + "schedule")

@@ -38,7 +38,7 @@ type DataSource struct {
 
 	// type
 	// Required: true
-	// Enum: [aws_es athena azure_kusto bigquery_gce Cassandra scylla clickhouse cloudwatch_insights corporate_memory databricks db2 dgraph dynamodb_sql google_analytics google_spreadsheets hive hive_http impala influxdb memsql mssql mssql_odbc rds_mysql oracle pg redshift redshift_iam cockroach phoenix presto qubole rockset insecure_script sparql_endpoint sqlite treasuredata trino yandex_metrika yandex_appmetrika]
+	// Enum: [athena aws_es azure_kusto bigquery_gce Cassandra clickhouse cloudwatch_insights cockroach corporate_memory databricks db2 dgraph dynamodb_sql google_analytics google_spreadsheets hive hive_http impala influxdb insecure_script memsql mongodb mssql mssql_odbc oracle pg phoenix presto qubole rds_mysql redshift redshift_iam rockset scylla sparql_endpoint sqlite treasuredata trino yandex_appmetrika yandex_metrika]
 	Type *string `json:"type"`
 }
 
@@ -102,7 +102,7 @@ var dataSourceTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["aws_es","athena","azure_kusto","bigquery_gce","Cassandra","scylla","clickhouse","cloudwatch_insights","corporate_memory","databricks","db2","dgraph","dynamodb_sql","google_analytics","google_spreadsheets","hive","hive_http","impala","influxdb","memsql","mssql","mssql_odbc","rds_mysql","oracle","pg","redshift","redshift_iam","cockroach","phoenix","presto","qubole","rockset","insecure_script","sparql_endpoint","sqlite","treasuredata","trino","yandex_metrika","yandex_appmetrika"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["athena","aws_es","azure_kusto","bigquery_gce","Cassandra","clickhouse","cloudwatch_insights","cockroach","corporate_memory","databricks","db2","dgraph","dynamodb_sql","google_analytics","google_spreadsheets","hive","hive_http","impala","influxdb","insecure_script","memsql","mongodb","mssql","mssql_odbc","oracle","pg","phoenix","presto","qubole","rds_mysql","redshift","redshift_iam","rockset","scylla","sparql_endpoint","sqlite","treasuredata","trino","yandex_appmetrika","yandex_metrika"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -112,11 +112,11 @@ func init() {
 
 const (
 
-	// DataSourceTypeAwsEs captures enum value "aws_es"
-	DataSourceTypeAwsEs string = "aws_es"
-
 	// DataSourceTypeAthena captures enum value "athena"
 	DataSourceTypeAthena string = "athena"
+
+	// DataSourceTypeAwsEs captures enum value "aws_es"
+	DataSourceTypeAwsEs string = "aws_es"
 
 	// DataSourceTypeAzureKusto captures enum value "azure_kusto"
 	DataSourceTypeAzureKusto string = "azure_kusto"
@@ -127,14 +127,14 @@ const (
 	// DataSourceTypeCassandra captures enum value "Cassandra"
 	DataSourceTypeCassandra string = "Cassandra"
 
-	// DataSourceTypeScylla captures enum value "scylla"
-	DataSourceTypeScylla string = "scylla"
-
 	// DataSourceTypeClickhouse captures enum value "clickhouse"
 	DataSourceTypeClickhouse string = "clickhouse"
 
 	// DataSourceTypeCloudwatchInsights captures enum value "cloudwatch_insights"
 	DataSourceTypeCloudwatchInsights string = "cloudwatch_insights"
+
+	// DataSourceTypeCockroach captures enum value "cockroach"
+	DataSourceTypeCockroach string = "cockroach"
 
 	// DataSourceTypeCorporateMemory captures enum value "corporate_memory"
 	DataSourceTypeCorporateMemory string = "corporate_memory"
@@ -169,8 +169,14 @@ const (
 	// DataSourceTypeInfluxdb captures enum value "influxdb"
 	DataSourceTypeInfluxdb string = "influxdb"
 
+	// DataSourceTypeInsecureScript captures enum value "insecure_script"
+	DataSourceTypeInsecureScript string = "insecure_script"
+
 	// DataSourceTypeMemsql captures enum value "memsql"
 	DataSourceTypeMemsql string = "memsql"
+
+	// DataSourceTypeMongodb captures enum value "mongodb"
+	DataSourceTypeMongodb string = "mongodb"
 
 	// DataSourceTypeMssql captures enum value "mssql"
 	DataSourceTypeMssql string = "mssql"
@@ -178,23 +184,11 @@ const (
 	// DataSourceTypeMssqlOdbc captures enum value "mssql_odbc"
 	DataSourceTypeMssqlOdbc string = "mssql_odbc"
 
-	// DataSourceTypeRdsMysql captures enum value "rds_mysql"
-	DataSourceTypeRdsMysql string = "rds_mysql"
-
 	// DataSourceTypeOracle captures enum value "oracle"
 	DataSourceTypeOracle string = "oracle"
 
 	// DataSourceTypePg captures enum value "pg"
 	DataSourceTypePg string = "pg"
-
-	// DataSourceTypeRedshift captures enum value "redshift"
-	DataSourceTypeRedshift string = "redshift"
-
-	// DataSourceTypeRedshiftIam captures enum value "redshift_iam"
-	DataSourceTypeRedshiftIam string = "redshift_iam"
-
-	// DataSourceTypeCockroach captures enum value "cockroach"
-	DataSourceTypeCockroach string = "cockroach"
 
 	// DataSourceTypePhoenix captures enum value "phoenix"
 	DataSourceTypePhoenix string = "phoenix"
@@ -205,11 +199,20 @@ const (
 	// DataSourceTypeQubole captures enum value "qubole"
 	DataSourceTypeQubole string = "qubole"
 
+	// DataSourceTypeRdsMysql captures enum value "rds_mysql"
+	DataSourceTypeRdsMysql string = "rds_mysql"
+
+	// DataSourceTypeRedshift captures enum value "redshift"
+	DataSourceTypeRedshift string = "redshift"
+
+	// DataSourceTypeRedshiftIam captures enum value "redshift_iam"
+	DataSourceTypeRedshiftIam string = "redshift_iam"
+
 	// DataSourceTypeRockset captures enum value "rockset"
 	DataSourceTypeRockset string = "rockset"
 
-	// DataSourceTypeInsecureScript captures enum value "insecure_script"
-	DataSourceTypeInsecureScript string = "insecure_script"
+	// DataSourceTypeScylla captures enum value "scylla"
+	DataSourceTypeScylla string = "scylla"
 
 	// DataSourceTypeSparqlEndpoint captures enum value "sparql_endpoint"
 	DataSourceTypeSparqlEndpoint string = "sparql_endpoint"
@@ -223,11 +226,11 @@ const (
 	// DataSourceTypeTrino captures enum value "trino"
 	DataSourceTypeTrino string = "trino"
 
-	// DataSourceTypeYandexMetrika captures enum value "yandex_metrika"
-	DataSourceTypeYandexMetrika string = "yandex_metrika"
-
 	// DataSourceTypeYandexAppmetrika captures enum value "yandex_appmetrika"
 	DataSourceTypeYandexAppmetrika string = "yandex_appmetrika"
+
+	// DataSourceTypeYandexMetrika captures enum value "yandex_metrika"
+	DataSourceTypeYandexMetrika string = "yandex_metrika"
 )
 
 // prop value enum

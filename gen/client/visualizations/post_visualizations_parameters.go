@@ -52,10 +52,12 @@ func NewPostVisualizationsParamsWithHTTPClient(client *http.Client) *PostVisuali
 	}
 }
 
-/* PostVisualizationsParams contains all the parameters to send to the API endpoint
-   for the post visualizations operation.
+/*
+PostVisualizationsParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the post visualizations operation.
+
+	Typically these are written to a http.Request.
 */
 type PostVisualizationsParams struct {
 

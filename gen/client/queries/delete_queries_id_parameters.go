@@ -53,10 +53,12 @@ func NewDeleteQueriesIDParamsWithHTTPClient(client *http.Client) *DeleteQueriesI
 	}
 }
 
-/* DeleteQueriesIDParams contains all the parameters to send to the API endpoint
-   for the delete queries ID operation.
+/*
+DeleteQueriesIDParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the delete queries ID operation.
+
+	Typically these are written to a http.Request.
 */
 type DeleteQueriesIDParams struct {
 

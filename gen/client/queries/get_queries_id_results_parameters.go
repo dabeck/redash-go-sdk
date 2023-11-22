@@ -53,10 +53,12 @@ func NewGetQueriesIDResultsParamsWithHTTPClient(client *http.Client) *GetQueries
 	}
 }
 
-/* GetQueriesIDResultsParams contains all the parameters to send to the API endpoint
-   for the get queries ID results operation.
+/*
+GetQueriesIDResultsParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get queries ID results operation.
+
+	Typically these are written to a http.Request.
 */
 type GetQueriesIDResultsParams struct {
 

@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/recolabs/redash-go-sdk/gen/models"
+	"github.com/dabeck/redash-go-sdk/gen/models"
 )
 
 // DeleteQueriesIDReader is a Reader for the DeleteQueriesID structure.
@@ -46,14 +46,49 @@ func NewDeleteQueriesIDOK() *DeleteQueriesIDOK {
 	return &DeleteQueriesIDOK{}
 }
 
-/* DeleteQueriesIDOK describes a response with status code 200, with default header values.
+/*
+DeleteQueriesIDOK describes a response with status code 200, with default header values.
 
 Query is archived
 */
 type DeleteQueriesIDOK struct {
 }
 
+// IsSuccess returns true when this delete queries Id o k response has a 2xx status code
+func (o *DeleteQueriesIDOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this delete queries Id o k response has a 3xx status code
+func (o *DeleteQueriesIDOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete queries Id o k response has a 4xx status code
+func (o *DeleteQueriesIDOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this delete queries Id o k response has a 5xx status code
+func (o *DeleteQueriesIDOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete queries Id o k response a status code equal to that given
+func (o *DeleteQueriesIDOK) IsCode(code int) bool {
+	return code == 200
+}
+
+// Code gets the status code for the delete queries Id o k response
+func (o *DeleteQueriesIDOK) Code() int {
+	return 200
+}
+
 func (o *DeleteQueriesIDOK) Error() string {
+	return fmt.Sprintf("[DELETE /queries/{id}][%d] deleteQueriesIdOK ", 200)
+}
+
+func (o *DeleteQueriesIDOK) String() string {
 	return fmt.Sprintf("[DELETE /queries/{id}][%d] deleteQueriesIdOK ", 200)
 }
 
@@ -69,7 +104,8 @@ func NewDeleteQueriesIDDefault(code int) *DeleteQueriesIDDefault {
 	}
 }
 
-/* DeleteQueriesIDDefault describes a response with status code -1, with default header values.
+/*
+DeleteQueriesIDDefault describes a response with status code -1, with default header values.
 
 error
 */
@@ -77,6 +113,31 @@ type DeleteQueriesIDDefault struct {
 	_statusCode int
 
 	Payload *models.Error
+}
+
+// IsSuccess returns true when this delete queries ID default response has a 2xx status code
+func (o *DeleteQueriesIDDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this delete queries ID default response has a 3xx status code
+func (o *DeleteQueriesIDDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this delete queries ID default response has a 4xx status code
+func (o *DeleteQueriesIDDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this delete queries ID default response has a 5xx status code
+func (o *DeleteQueriesIDDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this delete queries ID default response a status code equal to that given
+func (o *DeleteQueriesIDDefault) IsCode(code int) bool {
+	return o._statusCode == code
 }
 
 // Code gets the status code for the delete queries ID default response
@@ -87,6 +148,11 @@ func (o *DeleteQueriesIDDefault) Code() int {
 func (o *DeleteQueriesIDDefault) Error() string {
 	return fmt.Sprintf("[DELETE /queries/{id}][%d] DeleteQueriesID default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DeleteQueriesIDDefault) String() string {
+	return fmt.Sprintf("[DELETE /queries/{id}][%d] DeleteQueriesID default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DeleteQueriesIDDefault) GetPayload() *models.Error {
 	return o.Payload
 }

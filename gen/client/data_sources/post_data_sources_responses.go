@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 
-	"github.com/recolabs/redash-go-sdk/gen/models"
+	"github.com/dabeck/redash-go-sdk/gen/models"
 )
 
 // PostDataSourcesReader is a Reader for the PostDataSources structure.
@@ -48,7 +48,8 @@ func NewPostDataSourcesOK() *PostDataSourcesOK {
 	return &PostDataSourcesOK{}
 }
 
-/* PostDataSourcesOK describes a response with status code 200, with default header values.
+/*
+PostDataSourcesOK describes a response with status code 200, with default header values.
 
 OK
 */
@@ -56,9 +57,44 @@ type PostDataSourcesOK struct {
 	Payload *models.DataSource
 }
 
+// IsSuccess returns true when this post data sources o k response has a 2xx status code
+func (o *PostDataSourcesOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this post data sources o k response has a 3xx status code
+func (o *PostDataSourcesOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post data sources o k response has a 4xx status code
+func (o *PostDataSourcesOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this post data sources o k response has a 5xx status code
+func (o *PostDataSourcesOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this post data sources o k response a status code equal to that given
+func (o *PostDataSourcesOK) IsCode(code int) bool {
+	return code == 200
+}
+
+// Code gets the status code for the post data sources o k response
+func (o *PostDataSourcesOK) Code() int {
+	return 200
+}
+
 func (o *PostDataSourcesOK) Error() string {
 	return fmt.Sprintf("[POST /data_sources][%d] postDataSourcesOK  %+v", 200, o.Payload)
 }
+
+func (o *PostDataSourcesOK) String() string {
+	return fmt.Sprintf("[POST /data_sources][%d] postDataSourcesOK  %+v", 200, o.Payload)
+}
+
 func (o *PostDataSourcesOK) GetPayload() *models.DataSource {
 	return o.Payload
 }
@@ -82,7 +118,8 @@ func NewPostDataSourcesDefault(code int) *PostDataSourcesDefault {
 	}
 }
 
-/* PostDataSourcesDefault describes a response with status code -1, with default header values.
+/*
+PostDataSourcesDefault describes a response with status code -1, with default header values.
 
 error
 */
@@ -90,6 +127,31 @@ type PostDataSourcesDefault struct {
 	_statusCode int
 
 	Payload *models.Error
+}
+
+// IsSuccess returns true when this post data sources default response has a 2xx status code
+func (o *PostDataSourcesDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this post data sources default response has a 3xx status code
+func (o *PostDataSourcesDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this post data sources default response has a 4xx status code
+func (o *PostDataSourcesDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this post data sources default response has a 5xx status code
+func (o *PostDataSourcesDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this post data sources default response a status code equal to that given
+func (o *PostDataSourcesDefault) IsCode(code int) bool {
+	return o._statusCode == code
 }
 
 // Code gets the status code for the post data sources default response
@@ -100,6 +162,11 @@ func (o *PostDataSourcesDefault) Code() int {
 func (o *PostDataSourcesDefault) Error() string {
 	return fmt.Sprintf("[POST /data_sources][%d] PostDataSources default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *PostDataSourcesDefault) String() string {
+	return fmt.Sprintf("[POST /data_sources][%d] PostDataSources default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *PostDataSourcesDefault) GetPayload() *models.Error {
 	return o.Payload
 }
@@ -116,7 +183,8 @@ func (o *PostDataSourcesDefault) readResponse(response runtime.ClientResponse, c
 	return nil
 }
 
-/*PostDataSourcesBody post data sources body
+/*
+PostDataSourcesBody post data sources body
 swagger:model PostDataSourcesBody
 */
 type PostDataSourcesBody struct {

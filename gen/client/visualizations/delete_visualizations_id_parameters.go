@@ -53,10 +53,12 @@ func NewDeleteVisualizationsIDParamsWithHTTPClient(client *http.Client) *DeleteV
 	}
 }
 
-/* DeleteVisualizationsIDParams contains all the parameters to send to the API endpoint
-   for the delete visualizations ID operation.
+/*
+DeleteVisualizationsIDParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the delete visualizations ID operation.
+
+	Typically these are written to a http.Request.
 */
 type DeleteVisualizationsIDParams struct {
 

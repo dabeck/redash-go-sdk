@@ -48,7 +48,7 @@ type ClientService interface {
 }
 
 /*
-  DeleteQueriesID delete queries ID API
+DeleteQueriesID delete queries ID API
 */
 func (a *Client) DeleteQueriesID(params *DeleteQueriesIDParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteQueriesIDOK, error) {
 	// TODO: Validate the params before sending
@@ -86,7 +86,7 @@ func (a *Client) DeleteQueriesID(params *DeleteQueriesIDParams, authInfo runtime
 }
 
 /*
-  GetQueries get queries API
+GetQueries get queries API
 */
 func (a *Client) GetQueries(params *GetQueriesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetQueriesOK, error) {
 	// TODO: Validate the params before sending
@@ -124,7 +124,7 @@ func (a *Client) GetQueries(params *GetQueriesParams, authInfo runtime.ClientAut
 }
 
 /*
-  GetQueriesID get queries ID API
+GetQueriesID get queries ID API
 */
 func (a *Client) GetQueriesID(params *GetQueriesIDParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetQueriesIDOK, error) {
 	// TODO: Validate the params before sending
@@ -162,7 +162,7 @@ func (a *Client) GetQueriesID(params *GetQueriesIDParams, authInfo runtime.Clien
 }
 
 /*
-  GetQueriesIDResults get queries ID results API
+GetQueriesIDResults get queries ID results API
 */
 func (a *Client) GetQueriesIDResults(params *GetQueriesIDResultsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetQueriesIDResultsOK, error) {
 	// TODO: Validate the params before sending
@@ -200,7 +200,7 @@ func (a *Client) GetQueriesIDResults(params *GetQueriesIDResultsParams, authInfo
 }
 
 /*
-  PostQueries post queries API
+PostQueries post queries API
 */
 func (a *Client) PostQueries(params *PostQueriesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostQueriesOK, error) {
 	// TODO: Validate the params before sending
@@ -238,7 +238,7 @@ func (a *Client) PostQueries(params *PostQueriesParams, authInfo runtime.ClientA
 }
 
 /*
-  PostQueriesID post queries ID API
+PostQueriesID post queries ID API
 */
 func (a *Client) PostQueriesID(params *PostQueriesIDParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostQueriesIDOK, error) {
 	// TODO: Validate the params before sending
@@ -276,7 +276,7 @@ func (a *Client) PostQueriesID(params *PostQueriesIDParams, authInfo runtime.Cli
 }
 
 /*
-  PostQueriesIDRegenerateAPIKey post queries ID regenerate API key API
+PostQueriesIDRegenerateAPIKey post queries ID regenerate API key API
 */
 func (a *Client) PostQueriesIDRegenerateAPIKey(params *PostQueriesIDRegenerateAPIKeyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostQueriesIDRegenerateAPIKeyOK, error) {
 	// TODO: Validate the params before sending
@@ -314,7 +314,7 @@ func (a *Client) PostQueriesIDRegenerateAPIKey(params *PostQueriesIDRegenerateAP
 }
 
 /*
-  PostQueriesIDResults post queries ID results API
+PostQueriesIDResults post queries ID results API
 */
 func (a *Client) PostQueriesIDResults(params *PostQueriesIDResultsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostQueriesIDResultsOK, error) {
 	// TODO: Validate the params before sending

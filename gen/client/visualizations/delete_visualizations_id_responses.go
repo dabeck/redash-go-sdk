@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/recolabs/redash-go-sdk/gen/models"
+	"github.com/dabeck/redash-go-sdk/gen/models"
 )
 
 // DeleteVisualizationsIDReader is a Reader for the DeleteVisualizationsID structure.
@@ -46,14 +46,49 @@ func NewDeleteVisualizationsIDOK() *DeleteVisualizationsIDOK {
 	return &DeleteVisualizationsIDOK{}
 }
 
-/* DeleteVisualizationsIDOK describes a response with status code 200, with default header values.
+/*
+DeleteVisualizationsIDOK describes a response with status code 200, with default header values.
 
 Visualization was deleted
 */
 type DeleteVisualizationsIDOK struct {
 }
 
+// IsSuccess returns true when this delete visualizations Id o k response has a 2xx status code
+func (o *DeleteVisualizationsIDOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this delete visualizations Id o k response has a 3xx status code
+func (o *DeleteVisualizationsIDOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete visualizations Id o k response has a 4xx status code
+func (o *DeleteVisualizationsIDOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this delete visualizations Id o k response has a 5xx status code
+func (o *DeleteVisualizationsIDOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete visualizations Id o k response a status code equal to that given
+func (o *DeleteVisualizationsIDOK) IsCode(code int) bool {
+	return code == 200
+}
+
+// Code gets the status code for the delete visualizations Id o k response
+func (o *DeleteVisualizationsIDOK) Code() int {
+	return 200
+}
+
 func (o *DeleteVisualizationsIDOK) Error() string {
+	return fmt.Sprintf("[DELETE /visualizations/{id}][%d] deleteVisualizationsIdOK ", 200)
+}
+
+func (o *DeleteVisualizationsIDOK) String() string {
 	return fmt.Sprintf("[DELETE /visualizations/{id}][%d] deleteVisualizationsIdOK ", 200)
 }
 
@@ -69,7 +104,8 @@ func NewDeleteVisualizationsIDDefault(code int) *DeleteVisualizationsIDDefault {
 	}
 }
 
-/* DeleteVisualizationsIDDefault describes a response with status code -1, with default header values.
+/*
+DeleteVisualizationsIDDefault describes a response with status code -1, with default header values.
 
 error
 */
@@ -77,6 +113,31 @@ type DeleteVisualizationsIDDefault struct {
 	_statusCode int
 
 	Payload *models.Error
+}
+
+// IsSuccess returns true when this delete visualizations ID default response has a 2xx status code
+func (o *DeleteVisualizationsIDDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this delete visualizations ID default response has a 3xx status code
+func (o *DeleteVisualizationsIDDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this delete visualizations ID default response has a 4xx status code
+func (o *DeleteVisualizationsIDDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this delete visualizations ID default response has a 5xx status code
+func (o *DeleteVisualizationsIDDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this delete visualizations ID default response a status code equal to that given
+func (o *DeleteVisualizationsIDDefault) IsCode(code int) bool {
+	return o._statusCode == code
 }
 
 // Code gets the status code for the delete visualizations ID default response
@@ -87,6 +148,11 @@ func (o *DeleteVisualizationsIDDefault) Code() int {
 func (o *DeleteVisualizationsIDDefault) Error() string {
 	return fmt.Sprintf("[DELETE /visualizations/{id}][%d] DeleteVisualizationsID default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DeleteVisualizationsIDDefault) String() string {
+	return fmt.Sprintf("[DELETE /visualizations/{id}][%d] DeleteVisualizationsID default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DeleteVisualizationsIDDefault) GetPayload() *models.Error {
 	return o.Payload
 }

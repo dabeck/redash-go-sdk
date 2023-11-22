@@ -52,10 +52,12 @@ func NewPostQueriesParamsWithHTTPClient(client *http.Client) *PostQueriesParams 
 	}
 }
 
-/* PostQueriesParams contains all the parameters to send to the API endpoint
-   for the post queries operation.
+/*
+PostQueriesParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the post queries operation.
+
+	Typically these are written to a http.Request.
 */
 type PostQueriesParams struct {
 

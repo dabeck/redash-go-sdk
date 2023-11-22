@@ -1,4 +1,4 @@
-swagger: '2.0'
+swagger: "2.0"
 basePath: /api
 info:
   version: 10.1.0
@@ -15,391 +15,391 @@ securityDefinitions:
     in: header
     name: user-api-key
 security:
-- key: []
+  - key: []
 schemes:
-- https
-- http
+  - https
+  - http
 x-schemes:
-- unix
+  - unix
 paths:
   /data_sources:
     get:
       consumes:
-      - application/x-www-form-urlencoded
+        - application/x-www-form-urlencoded
       tags: [DataSources]
       operationId: list
       responses:
-        '200':
+        "200":
           description: OK
           schema:
             type: array
             items:
-              $ref: '#/definitions/dataSource'
+              $ref: "#/definitions/dataSource"
         default:
           description: error
           schema:
-            $ref: '#/definitions/error'
+            $ref: "#/definitions/error"
     post:
       tags: [DataSources]
       consumes:
-      - application/json
+        - application/json
       parameters:
-      - name: body
-        in: body
-        schema:
-          type: object
-          properties:
-            name:
-              type: string
-            options:
-              type: object
-            type:
-              type: string
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              options:
+                type: object
+              type:
+                type: string
       responses:
-        '200':
+        "200":
           description: OK
           schema:
-            $ref: '#/definitions/dataSource'
+            $ref: "#/definitions/dataSource"
         default:
           description: error
           schema:
-            $ref: '#/definitions/error'
+            $ref: "#/definitions/error"
   /data_sources/{id}:
     post:
       tags: [DataSources]
       consumes:
-      - application/json
+        - application/json
       parameters:
-      - in: path
-        name: id
-        type: integer
-        required: true
-      - name: body
-        in: body
-        schema:
-          type: object
-          properties:
-            name:
-              type: string
-            options:
-              type: object
-            type:
-              type: string
+        - in: path
+          name: id
+          type: integer
+          required: true
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              options:
+                type: object
+              type:
+                type: string
       responses:
-        '200':
+        "200":
           description: OK
           schema:
-            $ref: '#/definitions/dataSource'
+            $ref: "#/definitions/dataSource"
         default:
           description: error
           schema:
-            $ref: '#/definitions/error'
+            $ref: "#/definitions/error"
     get:
       consumes:
-      - application/x-www-form-urlencoded
+        - application/x-www-form-urlencoded
       tags: [DataSources]
       parameters:
-      - in: path
-        name: id
-        type: integer
-        required: true
+        - in: path
+          name: id
+          type: integer
+          required: true
       responses:
-        '200':
+        "200":
           description: Get data source by ID
           schema:
-            $ref: '#/definitions/dataSource'
+            $ref: "#/definitions/dataSource"
         default:
           description: error
           schema:
-            $ref: '#/definitions/error'
+            $ref: "#/definitions/error"
     delete:
       consumes:
-      - application/x-www-form-urlencoded
+        - application/x-www-form-urlencoded
       tags: [DataSources]
       parameters:
-      - in: path
-        name: id
-        type: integer
-        required: true
+        - in: path
+          name: id
+          type: integer
+          required: true
       responses:
-        '204':
+        "204":
           description: Data Source was deleted
         default:
           description: error
           schema:
-            $ref: '#/definitions/error'
+            $ref: "#/definitions/error"
   /visualizations:
     post:
       tags: [Visualizations]
       consumes:
-      - application/json
+        - application/json
       parameters:
-      - name: body
-        in: body
-        schema:
-          type: object
-          properties:
-            name:
-              type: string
-            options:
-              type: object
-            type:
-              type: string
-            query_id:
-              type: integer
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              options:
+                type: object
+              type:
+                type: string
+              query_id:
+                type: integer
       responses:
-        '200':
+        "200":
           description: OK
           schema:
-            $ref: '#/definitions/visualization'
+            $ref: "#/definitions/visualization"
         default:
           description: error
           schema:
-            $ref: '#/definitions/error'
+            $ref: "#/definitions/error"
   /visualizations/{id}:
     delete:
       consumes:
-      - application/x-www-form-urlencoded
+        - application/x-www-form-urlencoded
       tags: [Visualizations]
       parameters:
-      - in: path
-        name: id
-        type: integer
-        required: true
+        - in: path
+          name: id
+          type: integer
+          required: true
       responses:
-        '200':
+        "200":
           description: Visualization was deleted
         default:
           description: error
           schema:
-            $ref: '#/definitions/error'
+            $ref: "#/definitions/error"
   /queries:
     get:
       consumes:
-      - application/x-www-form-urlencoded
+        - application/x-www-form-urlencoded
       tags: [Queries]
       parameters:
-      - in: query
-        name: page_size
-        type: integer
-        default: 100
-        description: Numeric ID to limit number of results
+        - in: query
+          name: page_size
+          type: integer
+          default: 100
+          description: Numeric ID to limit number of results
       responses:
-        '200':
+        "200":
           description: List queries
           schema:
-            $ref: '#/definitions/queryList'
+            $ref: "#/definitions/queryList"
         default:
           description: error
           schema:
-            $ref: '#/definitions/error'
+            $ref: "#/definitions/error"
     post:
       tags: [Queries]
       consumes:
-      - application/json
+        - application/json
       parameters:
-      - name: body
-        in: body
-        schema:
-          type: object
-          required:
-          - is_draft
-          properties:
-            data_source_id:
-              type: integer
-              format: int64
-            options:
-              type: object
-            query:
-              type: string
-            name:
-              type: string
-            version:
-              type: integer
-              format: int64
-            is_draft:
-              type: boolean
-            description:
-              type: string
-            schedule:
-              $ref: '#/definitions/schedule'
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - is_draft
+            properties:
+              data_source_id:
+                type: integer
+                format: int64
+              options:
+                type: object
+              query:
+                type: string
+              name:
+                type: string
+              version:
+                type: integer
+                format: int64
+              is_draft:
+                type: boolean
+              description:
+                type: string
+              schedule:
+                $ref: "#/definitions/schedule"
       responses:
-        '200':
+        "200":
           description: OK
           schema:
-            $ref: '#/definitions/query'
+            $ref: "#/definitions/query"
         default:
           description: error
           schema:
-            $ref: '#/definitions/error'
+            $ref: "#/definitions/error"
   /queries/{id}:
     get:
       consumes:
-      - application/x-www-form-urlencoded
+        - application/x-www-form-urlencoded
       tags: [Queries]
       parameters:
-      - in: path
-        name: id
-        type: integer
-        required: true
+        - in: path
+          name: id
+          type: integer
+          required: true
       responses:
-        '200':
+        "200":
           description: Returned query object
           schema:
-            $ref: '#/definitions/query'
+            $ref: "#/definitions/query"
         default:
           description: error
           schema:
-            $ref: '#/definitions/error'
+            $ref: "#/definitions/error"
     post:
       consumes:
-      - application/json
+        - application/json
       tags: [Queries]
       parameters:
-      - in: path
-        name: id
-        type: integer
-        required: true
-      - name: body
-        in: body
-        schema:
-          type: object
-          required:
-          - is_draft
-          properties:
-            id:
-              type: integer
-              format: int64
-            is_draft:
-              type: boolean
-            version:
-              type: integer
-              format: int64
-              default: 1
+        - in: path
+          name: id
+          type: integer
+          required: true
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - is_draft
+            properties:
+              id:
+                type: integer
+                format: int64
+              is_draft:
+                type: boolean
+              version:
+                type: integer
+                format: int64
+                default: 1
       responses:
-        '200':
+        "200":
           description: Returned query object
           schema:
-            $ref: '#/definitions/query'
+            $ref: "#/definitions/query"
         default:
           description: error
           schema:
-            $ref: '#/definitions/error'
+            $ref: "#/definitions/error"
     delete:
       consumes:
-      - application/x-www-form-urlencoded
+        - application/x-www-form-urlencoded
       tags: [Queries]
       parameters:
-      - in: path
-        name: id
-        type: integer
-        required: true
+        - in: path
+          name: id
+          type: integer
+          required: true
       responses:
-        '200':
+        "200":
           description: Query is archived
         default:
           description: error
           schema:
-            $ref: '#/definitions/error'
+            $ref: "#/definitions/error"
   /queries/{id}/results:
     post:
       consumes:
-      - application/json
+        - application/json
       tags: [Queries]
       parameters:
-      - in: path
-        name: id
-        type: integer
-        required: true
-      - name: body
-        in: body
-        schema:
-          type: object
-          required:
-          - id
-          - max_age
-          - apply_auto_limit
-          - parametersDict
-          properties:
-            id:
-              type: integer
-              format: int64
-            max_age:
-              type: integer
-              format: int64
-            apply_auto_limit:
-              type: boolean
-            parameters:
-              type: object
-              minLength: 2
+        - in: path
+          name: id
+          type: integer
+          required: true
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - id
+              - max_age
+              - apply_auto_limit
+              - parametersDict
+            properties:
+              id:
+                type: integer
+                format: int64
+              max_age:
+                type: integer
+                format: int64
+              apply_auto_limit:
+                type: boolean
+              parameters:
+                type: object
+                minLength: 2
       responses:
-        '200':
+        "200":
           description: Query is executed
           schema:
-            $ref: '#/definitions/jobResult'
+            $ref: "#/definitions/jobResult"
         default:
           description: error
           schema:
-            $ref: '#/definitions/error'
+            $ref: "#/definitions/error"
     get:
       consumes:
-      - application/x-www-form-urlencoded
+        - application/x-www-form-urlencoded
       tags: [Queries]
       parameters:
-      - in: path
-        name: id
-        type: integer
-        required: true
+        - in: path
+          name: id
+          type: integer
+          required: true
       responses:
-        '200':
+        "200":
           description: Query is executed
           schema:
-            $ref: '#/definitions/queryResult'
+            $ref: "#/definitions/queryResult"
         default:
           description: error
           schema:
-            $ref: '#/definitions/error'
+            $ref: "#/definitions/error"
   /queries/{id}/regenerate_api_key:
     post:
       parameters:
-      - in: path
-        name: id
-        type: integer
-        required: true
+        - in: path
+          name: id
+          type: integer
+          required: true
       consumes:
-      - application/x-www-form-urlencoded
+        - application/x-www-form-urlencoded
       tags: [Queries]
       responses:
-        '200':
+        "200":
           description: The query which token was refreshed
         default:
           description: error
           schema:
-            $ref: '#/definitions/error'
+            $ref: "#/definitions/error"
   /users/{id}:
     get:
       consumes:
-      - application/x-www-form-urlencoded
+        - application/x-www-form-urlencoded
       tags: [Users]
       parameters:
-      - in: path
-        name: id
-        type: integer
-        required: true
+        - in: path
+          name: id
+          type: integer
+          required: true
       responses:
-        '200':
+        "200":
           description: Get user by ID
           schema:
-            $ref: '#/definitions/user'
+            $ref: "#/definitions/user"
         default:
           description: error
           schema:
-            $ref: '#/definitions/error'
+            $ref: "#/definitions/error"
   /ping:
     get:
       tags: [Administration]
       responses:
-        '200':
+        "200":
           description: OK
           schema:
             type: string
@@ -408,9 +408,9 @@ definitions:
   dataSource:
     type: object
     required:
-    - name
-    - options
-    - type
+      - name
+      - options
+      - type
     properties:
       id:
         type: integer
@@ -424,55 +424,56 @@ definitions:
       type:
         type: string
         enum:
-        - aws_es
-        - athena
-        - azure_kusto
-        - bigquery_gce
-        - Cassandra
-        - scylla
-        - clickhouse
-        - cloudwatch_insights
-        - corporate_memory
-        - databricks
-        - db2
-        - dgraph
-        - dynamodb_sql
-        - google_analytics
-        - google_spreadsheets
-        - hive
-        - hive_http
-        - impala
-        - influxdb
-        - memsql
-        - mssql
-        - mssql_odbc
-        - rds_mysql
-        - oracle
-        - pg
-        - redshift
-        - redshift_iam
-        - cockroach
-        - phoenix
-        - presto
-        - qubole
-        - rockset
-        - insecure_script
-        - sparql_endpoint
-        - sqlite
-        - treasuredata
-        - trino
-        - yandex_metrika
-        - yandex_appmetrika
+          - athena
+          - aws_es
+          - azure_kusto
+          - bigquery_gce
+          - Cassandra
+          - clickhouse
+          - cloudwatch_insights
+          - cockroach
+          - corporate_memory
+          - databricks
+          - db2
+          - dgraph
+          - dynamodb_sql
+          - google_analytics
+          - google_spreadsheets
+          - hive
+          - hive_http
+          - impala
+          - influxdb
+          - insecure_script
+          - memsql
+          - mongodb
+          - mssql
+          - mssql_odbc
+          - oracle
+          - pg
+          - phoenix
+          - presto
+          - qubole
+          - rds_mysql
+          - redshift
+          - redshift_iam
+          - rockset
+          - scylla
+          - sparql_endpoint
+          - sqlite
+          - treasuredata
+          - trino
+          - yandex_appmetrika
+          - yandex_metrika
       syntax:
         type: string
         minLength: 1
   visualization:
     type: object
     required:
-    - name
-    - options
-    - type
-    - query_id
+      - name
+      - options
+      - type
+      - query_id
     properties:
       id:
         type: integer
@@ -490,19 +491,19 @@ definitions:
       type:
         type: string
         enum:
-        - BOXPLOT
-        - CHART
-        - CHOROPLETH
-        - COHORT
-        - COUNTER
-        - DETAILS
-        - FUNNEL
-        - MAP
-        - PIVOT
-        - SANKEY
-        - SUNBURST_SEQUENCE
-        - TABLE
-        - WORD_CLOUD
+          - BOXPLOT
+          - CHART
+          - CHOROPLETH
+          - COHORT
+          - COUNTER
+          - DETAILS
+          - FUNNEL
+          - MAP
+          - PIVOT
+          - SANKEY
+          - SUNBURST_SEQUENCE
+          - TABLE
+          - WORD_CLOUD
       query_id:
         type: integer
         minLength: 1
@@ -511,8 +512,8 @@ definitions:
   query:
     type: object
     required:
-    - name
-    - query
+      - name
+      - query
     properties:
       id:
         type: integer
@@ -551,11 +552,11 @@ definitions:
         format: int64
         default: 1
       schedule:
-        $ref: '#/definitions/schedule'
+        $ref: "#/definitions/schedule"
       visualizations:
         type: array
         items:
-          $ref: '#/definitions/visualization'
+          $ref: "#/definitions/visualization"
   queryList:
     type: object
     properties:
@@ -570,13 +571,13 @@ definitions:
       results:
         type: array
         items:
-          $ref: '#/definitions/query'
+          $ref: "#/definitions/query"
   user:
     type: object
     required:
-    - name
-    - email
-    - orgName
+      - name
+      - email
+      - orgName
     properties:
       id:
         type: integer
@@ -605,7 +606,7 @@ definitions:
   error:
     type: object
     required:
-    - message
+      - message
     properties:
       code:
         type: integer

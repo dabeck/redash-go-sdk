@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/recolabs/redash-go-sdk/gen/models"
+	"github.com/dabeck/redash-go-sdk/gen/models"
 )
 
 // GetQueriesIDReader is a Reader for the GetQueriesID structure.
@@ -46,7 +46,8 @@ func NewGetQueriesIDOK() *GetQueriesIDOK {
 	return &GetQueriesIDOK{}
 }
 
-/* GetQueriesIDOK describes a response with status code 200, with default header values.
+/*
+GetQueriesIDOK describes a response with status code 200, with default header values.
 
 Returned query object
 */
@@ -54,9 +55,44 @@ type GetQueriesIDOK struct {
 	Payload *models.Query
 }
 
+// IsSuccess returns true when this get queries Id o k response has a 2xx status code
+func (o *GetQueriesIDOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get queries Id o k response has a 3xx status code
+func (o *GetQueriesIDOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get queries Id o k response has a 4xx status code
+func (o *GetQueriesIDOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get queries Id o k response has a 5xx status code
+func (o *GetQueriesIDOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get queries Id o k response a status code equal to that given
+func (o *GetQueriesIDOK) IsCode(code int) bool {
+	return code == 200
+}
+
+// Code gets the status code for the get queries Id o k response
+func (o *GetQueriesIDOK) Code() int {
+	return 200
+}
+
 func (o *GetQueriesIDOK) Error() string {
 	return fmt.Sprintf("[GET /queries/{id}][%d] getQueriesIdOK  %+v", 200, o.Payload)
 }
+
+func (o *GetQueriesIDOK) String() string {
+	return fmt.Sprintf("[GET /queries/{id}][%d] getQueriesIdOK  %+v", 200, o.Payload)
+}
+
 func (o *GetQueriesIDOK) GetPayload() *models.Query {
 	return o.Payload
 }
@@ -80,7 +116,8 @@ func NewGetQueriesIDDefault(code int) *GetQueriesIDDefault {
 	}
 }
 
-/* GetQueriesIDDefault describes a response with status code -1, with default header values.
+/*
+GetQueriesIDDefault describes a response with status code -1, with default header values.
 
 error
 */
@@ -88,6 +125,31 @@ type GetQueriesIDDefault struct {
 	_statusCode int
 
 	Payload *models.Error
+}
+
+// IsSuccess returns true when this get queries ID default response has a 2xx status code
+func (o *GetQueriesIDDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this get queries ID default response has a 3xx status code
+func (o *GetQueriesIDDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this get queries ID default response has a 4xx status code
+func (o *GetQueriesIDDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this get queries ID default response has a 5xx status code
+func (o *GetQueriesIDDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this get queries ID default response a status code equal to that given
+func (o *GetQueriesIDDefault) IsCode(code int) bool {
+	return o._statusCode == code
 }
 
 // Code gets the status code for the get queries ID default response
@@ -98,6 +160,11 @@ func (o *GetQueriesIDDefault) Code() int {
 func (o *GetQueriesIDDefault) Error() string {
 	return fmt.Sprintf("[GET /queries/{id}][%d] GetQueriesID default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *GetQueriesIDDefault) String() string {
+	return fmt.Sprintf("[GET /queries/{id}][%d] GetQueriesID default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *GetQueriesIDDefault) GetPayload() *models.Error {
 	return o.Payload
 }

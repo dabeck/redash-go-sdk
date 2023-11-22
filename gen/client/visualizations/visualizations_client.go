@@ -36,7 +36,7 @@ type ClientService interface {
 }
 
 /*
-  DeleteVisualizationsID delete visualizations ID API
+DeleteVisualizationsID delete visualizations ID API
 */
 func (a *Client) DeleteVisualizationsID(params *DeleteVisualizationsIDParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteVisualizationsIDOK, error) {
 	// TODO: Validate the params before sending
@@ -74,7 +74,7 @@ func (a *Client) DeleteVisualizationsID(params *DeleteVisualizationsIDParams, au
 }
 
 /*
-  PostVisualizations post visualizations API
+PostVisualizations post visualizations API
 */
 func (a *Client) PostVisualizations(params *PostVisualizationsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PostVisualizationsOK, error) {
 	// TODO: Validate the params before sending

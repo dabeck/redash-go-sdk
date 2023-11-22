@@ -16,7 +16,7 @@ import (
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 
-	"github.com/recolabs/redash-go-sdk/gen/models"
+	"github.com/dabeck/redash-go-sdk/gen/models"
 )
 
 // PostQueriesIDReader is a Reader for the PostQueriesID structure.
@@ -50,7 +50,8 @@ func NewPostQueriesIDOK() *PostQueriesIDOK {
 	return &PostQueriesIDOK{}
 }
 
-/* PostQueriesIDOK describes a response with status code 200, with default header values.
+/*
+PostQueriesIDOK describes a response with status code 200, with default header values.
 
 Returned query object
 */
@@ -58,9 +59,44 @@ type PostQueriesIDOK struct {
 	Payload *models.Query
 }
 
+// IsSuccess returns true when this post queries Id o k response has a 2xx status code
+func (o *PostQueriesIDOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this post queries Id o k response has a 3xx status code
+func (o *PostQueriesIDOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post queries Id o k response has a 4xx status code
+func (o *PostQueriesIDOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this post queries Id o k response has a 5xx status code
+func (o *PostQueriesIDOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this post queries Id o k response a status code equal to that given
+func (o *PostQueriesIDOK) IsCode(code int) bool {
+	return code == 200
+}
+
+// Code gets the status code for the post queries Id o k response
+func (o *PostQueriesIDOK) Code() int {
+	return 200
+}
+
 func (o *PostQueriesIDOK) Error() string {
 	return fmt.Sprintf("[POST /queries/{id}][%d] postQueriesIdOK  %+v", 200, o.Payload)
 }
+
+func (o *PostQueriesIDOK) String() string {
+	return fmt.Sprintf("[POST /queries/{id}][%d] postQueriesIdOK  %+v", 200, o.Payload)
+}
+
 func (o *PostQueriesIDOK) GetPayload() *models.Query {
 	return o.Payload
 }
@@ -84,7 +120,8 @@ func NewPostQueriesIDDefault(code int) *PostQueriesIDDefault {
 	}
 }
 
-/* PostQueriesIDDefault describes a response with status code -1, with default header values.
+/*
+PostQueriesIDDefault describes a response with status code -1, with default header values.
 
 error
 */
@@ -92,6 +129,31 @@ type PostQueriesIDDefault struct {
 	_statusCode int
 
 	Payload *models.Error
+}
+
+// IsSuccess returns true when this post queries ID default response has a 2xx status code
+func (o *PostQueriesIDDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this post queries ID default response has a 3xx status code
+func (o *PostQueriesIDDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this post queries ID default response has a 4xx status code
+func (o *PostQueriesIDDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this post queries ID default response has a 5xx status code
+func (o *PostQueriesIDDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this post queries ID default response a status code equal to that given
+func (o *PostQueriesIDDefault) IsCode(code int) bool {
+	return o._statusCode == code
 }
 
 // Code gets the status code for the post queries ID default response
@@ -102,6 +164,11 @@ func (o *PostQueriesIDDefault) Code() int {
 func (o *PostQueriesIDDefault) Error() string {
 	return fmt.Sprintf("[POST /queries/{id}][%d] PostQueriesID default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *PostQueriesIDDefault) String() string {
+	return fmt.Sprintf("[POST /queries/{id}][%d] PostQueriesID default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *PostQueriesIDDefault) GetPayload() *models.Error {
 	return o.Payload
 }
@@ -118,7 +185,8 @@ func (o *PostQueriesIDDefault) readResponse(response runtime.ClientResponse, con
 	return nil
 }
 
-/*PostQueriesIDBody post queries ID body
+/*
+PostQueriesIDBody post queries ID body
 swagger:model PostQueriesIDBody
 */
 type PostQueriesIDBody struct {

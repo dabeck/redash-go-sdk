@@ -6,9 +6,9 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/recolabs/redash-go-sdk/gen/client"
-	gen_data_sources "github.com/recolabs/redash-go-sdk/gen/client/data_sources"
-	"github.com/recolabs/redash-go-sdk/gen/models"
+	"github.com/dabeck/redash-go-sdk/gen/client"
+	gen_data_sources "github.com/dabeck/redash-go-sdk/gen/client/data_sources"
+	"github.com/dabeck/redash-go-sdk/gen/models"
 	mock_data_sources "github.com/recolabs/redash-go-sdk/mocks/data_sources"
 	"github.com/recolabs/redash-go-sdk/options"
 )

@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/recolabs/redash-go-sdk/gen/client"
-	vis "github.com/recolabs/redash-go-sdk/gen/client/visualizations"
-	"github.com/recolabs/redash-go-sdk/gen/models"
+	"github.com/dabeck/redash-go-sdk/gen/client"
+	vis "github.com/dabeck/redash-go-sdk/gen/client/visualizations"
+	"github.com/dabeck/redash-go-sdk/gen/models"
 	"github.com/recolabs/redash-go-sdk/options"
 )
 

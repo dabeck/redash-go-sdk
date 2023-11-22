@@ -82,7 +82,7 @@ import (
     "fmt"
 
     redashclient "github.com/recolabs/redash-go-sdk"
-    "github.com/recolabs/redash-go-sdk/gen/client"
+    "github.com/dabeck/redash-go-sdk/gen/client"
 )
 
 func main() {

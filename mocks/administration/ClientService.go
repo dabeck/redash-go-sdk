@@ -3,7 +3,7 @@
 package administrationmock
 
 import (
-	administration "github.com/recolabs/redash-go-sdk/gen/client/administration"
+	administration "github.com/dabeck/redash-go-sdk/gen/client/administration"
 	mock "github.com/stretchr/testify/mock"
 
 	runtime "github.com/go-openapi/runtime"

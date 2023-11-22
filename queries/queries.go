@@ -1,9 +1,9 @@
 package queries
 
 import (
-	"github.com/recolabs/redash-go-sdk/gen/client"
-	"github.com/recolabs/redash-go-sdk/gen/client/queries"
-	"github.com/recolabs/redash-go-sdk/gen/models"
+	"github.com/dabeck/redash-go-sdk/gen/client"
+	"github.com/dabeck/redash-go-sdk/gen/client/queries"
+	"github.com/dabeck/redash-go-sdk/gen/models"
 	"github.com/recolabs/redash-go-sdk/options"
 )
 

@@ -5,9 +5,9 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/recolabs/redash-go-sdk/gen/client"
-	gen_queries "github.com/recolabs/redash-go-sdk/gen/client/queries"
-	"github.com/recolabs/redash-go-sdk/gen/models"
+	"github.com/dabeck/redash-go-sdk/gen/client"
+	gen_queries "github.com/dabeck/redash-go-sdk/gen/client/queries"
+	"github.com/dabeck/redash-go-sdk/gen/models"
 	mock_queries "github.com/recolabs/redash-go-sdk/mocks/queries"
 	"github.com/recolabs/redash-go-sdk/options"
 )
